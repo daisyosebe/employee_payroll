@@ -1,10 +1,18 @@
-# employee_payroll
-GIVEN an employee payroll tracker
-WHEN I click the "Add employee" button
-THEN I am presented with a series of prompts asking for first name, last name, and salary
-WHEN I finish adding an employee
-THEN I am prompted to continue or cancel
-WHEN I choose to continue
-THEN I am prompted to add a new employee
-WHEN I choose to cancel
-THEN my employee data is displayed on the page sorted alphabetically by last name, and the console shows computed and aggregated data
+# employee_payroll_tracker
+
+When "Add employee" button you receive a prompts for first name, last name, and salary.
+
+After all three pieces of information are entered, you are asked if you would like to add more employees. 
+
+If you choose to add more, then you are promted to add a new employee. 
+
+If you choose to cancel, then employee data is displayed on the page sorted alphabetically by last name, 
+
+and the console shows average salary and a randomly picked employee. 
+
+Sources: 
+- Used Xpert Learning Assistant for assistance in fixing code errors. 
+
+Repo Link: (https://github.com/daisyosebe/employee_payroll.git)
+
+Git Hub Page Deployment: (https://daisyosebe.github.io/employee_payroll/)
