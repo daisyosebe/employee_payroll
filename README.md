@@ -1,6 +1,6 @@
 # employee_payroll_tracker
 
-When "Add employee" button you receive prompts for first name, last name, and salary.
+After clicking the "Add employee" button, you'll receive prompts for first name, last name, and salary.
 
 After all three pieces of information are entered, you are asked if you want to add more employees. 
 
