@@ -1,20 +1,16 @@
 // Get a reference to the #add-employees-btn element
 const addEmployeesBtn = document.querySelector('#add-employees-btn');
-
-
-
-
 // Collect employee data
 const collectEmployees = function() {
   // TODO: Get user input to create and return an array of employee objects
   const employeesArray = []; // Array to store employee objects
-
+// console.log(employeesArray);
   while (true) {
     let firstName;
     while (true) {
-        firstName = prompt('First Name:');
+        firstName = prompt('Employees First Name:');
         if (firstName === null) {
-            return employees; // Exit the loop and function if user cancels
+            return employeesArray; // Exit the loop and function if user cancels
         } else if (firstName.trim() === '') {
             // Prompt again if nothing is entered
             alert('first name cannot be empty. Please enter first name.');
@@ -25,9 +21,9 @@ const collectEmployees = function() {
 
     let lastName;
     while (true) {
-        lastName = prompt('Last Name:');
+        lastName = prompt('Employees Last Name:');
         if (lastName === null) {
-            return employees; // Exit the loop and function if user cancels
+            return employeesArray; // Exit the loop and function if user cancels
         } else if (lastName.trim() === '') {
             // Prompt again if nothing is entered
             alert('Last name cannot be empty. Please enter last name.');
@@ -36,12 +32,11 @@ const collectEmployees = function() {
         }
     }
     
-
     let salary;
     while (true) {
       const salaryInput = prompt('Employee Salary:');
       if (salaryInput === null) {
-        return employees; // Exit the loop and function if user cancels
+        return employeesArray; // Exit the loop and function if user cancels
       }
       salary = parseFloat(salaryInput); // Parse the input as a float
       if (!isNaN(salary)) break; // Exit the loop if a valid number is entered
@@ -49,7 +44,7 @@ const collectEmployees = function() {
     }
 
     // employees.push({ firstName, lastName, salary }); // Add employee object to the array
-
+    employeesArray.push({firstName, lastName, salary});
     // Ask if the user wants to add another employee
     const addAnother = confirm('Do you want to add another employee?');
     if (!addAnother) {
@@ -57,12 +52,10 @@ const collectEmployees = function() {
     }
   }
 
-  return employees;
+  return employeesArray;
 };
 
-
-
-
+// const employees = collectEmployees();
 
 // Display the average salary
 const displayAverageSalary = function(employeesArray) {
@@ -87,7 +80,25 @@ const displayAverageSalary = function(employeesArray) {
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
   // TODO: Select and display a random employee
-}
+  if (employeesArray.length === 0) {
+    console.log('No employees available.');
+    return null;
+  }
+
+  // Generate a random index within the range of the array length
+  const randomIndex = Math.floor(Math.random() * employeesArray.length);
+  // Return the random employee at the random index
+  const randomEmployee = employeesArray[randomIndex];
+  console.log(`Congrats to our randomly picked Employee: ${randomEmployee.firstName} ${randomEmployee.lastName}`);
+
+  return randomEmployee;
+};
+
+// TODO: Select and display a random employee
+
+
+
+
 
 
 
@@ -154,7 +165,7 @@ const trackEmployeeData = function() {
   });
 
   displayEmployees(employees);
-}
+};
 
 // Add event listener to 'Add Employees' button
 addEmployeesBtn.addEventListener('click', trackEmployeeData);
